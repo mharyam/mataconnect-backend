@@ -1,6 +1,6 @@
 from app.communities.models import Community
-from app.communities.repository import save_community, search_communities
-from typing import List
+from app.communities.repository import save_community, search_communities_by_filters
+from typing import List, Optional
 
 
 def create_community(data: dict) -> Community:
@@ -8,5 +8,12 @@ def create_community(data: dict) -> Community:
     return save_community(community)
 
 
-def search_community_by_name(query: str) -> List[Community]:
-    return search_communities(query)
+def search_community_by_filters(
+    text: Optional[str] = None,
+    featured: Optional[bool] = None,
+    country: Optional[str] = None,
+    categories: Optional[List[str]] = None,
+) -> List[Community]:
+    return search_communities_by_filters(
+        text=text, featured=featured, country=country, categories=categories
+    )

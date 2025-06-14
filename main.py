@@ -1,11 +1,14 @@
 from fastapi import FastAPI
 
-from app.interfaces.api import router
+
+from app.routes import api_router
 
 app = FastAPI()
 
-# Include API routes
-app.include_router(router)
+
+# Register all API routes under /api
+app.include_router(api_router, prefix="/api")
+
 
 @app.get("/")
 def read_root():

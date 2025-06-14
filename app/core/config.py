@@ -6,7 +6,6 @@ load_dotenv()
 # MongoDB Configuration
 MONGODB_URI = os.getenv("MONGODB_URI")
 MONGODB_DATABASE = os.getenv("MONGODB_DATABASE")
-MONGODB_COLLECTION = os.getenv("MONGODB_COLLECTION")
 
 # Google Cloud Configuration
 GCP_PROJECT = os.getenv("GCP_PROJECT")

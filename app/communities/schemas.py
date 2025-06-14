@@ -1,18 +1,21 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 
 class CommunityRequest(BaseModel):
-    name: str
-    description: str
+    name: Optional[str]
+    description: Optional[str]
     country: Optional[str]
     is_virtual: Optional[bool]
 
 
 class CommunityResponse(BaseModel):
-    id: str
+    _id: str
     name: str
-    description: str
+    description: Optional[str]
     country: Optional[str]
     is_virtual: Optional[bool]
-    embedding: List[float]
+    tags: List[str]
+    social_links: Optional[dict]
+    website: Optional[str]
+    community_info: Dict[str, str]
