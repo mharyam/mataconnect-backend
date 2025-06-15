@@ -10,9 +10,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://mataconnect-website-bkxslbfewa-nw.a.run.app/",
-        "http://mataconnect.org/",
-        "https://mataconnect-website.vercel.app/",
+        "https://mataconnect-website-bkxslbfewa-nw.a.run.app",
+        "http://mataconnect.org",
+        "https://mataconnect-website.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods
