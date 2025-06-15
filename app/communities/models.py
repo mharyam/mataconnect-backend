@@ -1,9 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, root_validator
 from typing import List, Optional, Dict
 
 
 class Community(BaseModel):
-    _id: str
+    id: str
     name: str
     description: Optional[str] = None
     website: Optional[str] = None
@@ -25,3 +25,10 @@ class Community(BaseModel):
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
     last_verified_at: Optional[str] = None
+
+    @root_validator(pre=True)
+    def cleanup_id(cls, values):
+        _id = values.get("_id")
+        if _id is not None:
+            values["id"] = str(_id)
+        return values

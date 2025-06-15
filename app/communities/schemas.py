@@ -10,7 +10,7 @@ class CommunityRequest(BaseModel):
 
 
 class CommunityResponse(BaseModel):
-    _id: str
+    id: str
     name: str
     description: Optional[str]
     country: Optional[str]
