@@ -8,22 +8,6 @@ MataConnect is an AI-powered search engine that helps women discover relevant co
 - Uses Google Vertex AI for generating embeddings
 - Performs vector search on MongoDB Atlas
 
-## Project Structure
-
-```
-mataconnect-backend/
-├── main.py                # Application entry point
-├── app/
-│   ├── core/              # App configuration and settings
-│   ├── domain/            # Core business models
-│   ├── application/       # Use cases and orchestrators
-│   ├── infrastructure/    # External services (MongoDB, Vertex AI)
-│   └── interfaces/        # API route handlers and schemas
-├── .env                   # Environment variables
-├── requirements.txt       # Python dependencies
-└── README.md              # Project documentation
-```
-
 ## Installation
 
 1. Clone the repository:
